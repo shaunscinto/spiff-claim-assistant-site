@@ -1,0 +1,403 @@
+:root {
+  color-scheme: light;
+  --ink: #14202a;
+  --muted: #5c6b76;
+  --soft: #f4f7f9;
+  --panel: #ffffff;
+  --line: #d9e3e8;
+  --navy: #0d2237;
+  --navy-soft: #18354c;
+  --teal: #0b8f83;
+  --teal-strong: #08776e;
+  --gold: #c58a18;
+  --red: #b93b45;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--panel);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  min-height: 70px;
+  padding: 14px clamp(18px, 5vw, 58px);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(11, 143, 131, 0.38);
+  border-radius: 8px;
+  background: #eaf6f4;
+  color: var(--teal);
+  font-weight: 900;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.2vw, 26px);
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--ink);
+}
+
+.button,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 1px solid var(--teal);
+  border-radius: 8px;
+  padding: 0 18px;
+  background: var(--teal);
+  color: white;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button:hover,
+button:hover {
+  background: var(--teal-strong);
+}
+
+.button.secondary {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.button.secondary:hover {
+  background: var(--soft);
+}
+
+.hero {
+  min-height: min(650px, 86vh);
+  display: grid;
+  align-items: end;
+  padding: 126px clamp(18px, 5vw, 58px) 68px;
+  background:
+    linear-gradient(90deg, rgba(13, 34, 55, 0.96) 0%, rgba(13, 34, 55, 0.78) 48%, rgba(13, 34, 55, 0.18) 100%),
+    url("spiff-dashboard-preview.png") center right / cover no-repeat;
+  color: white;
+}
+
+.hero-inner {
+  width: min(690px, 100%);
+}
+
+.hero .button.secondary {
+  border-color: rgba(255, 255, 255, 0.36);
+  color: white;
+}
+
+.hero .button.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: #74d8ce;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 720px;
+  font-size: clamp(42px, 6.5vw, 78px);
+}
+
+h2 {
+  font-size: clamp(30px, 4.2vw, 50px);
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.62;
+  font-size: 17px;
+}
+
+.hero-copy {
+  max-width: 620px;
+  color: #d7e5eb;
+  font-size: clamp(18px, 2vw, 22px);
+}
+
+.hero-actions,
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+main > section,
+.page {
+  padding: 70px clamp(18px, 5vw, 58px);
+}
+
+.soft-section {
+  background: var(--soft);
+  border-block: 1px solid var(--line);
+}
+
+.section-heading {
+  display: grid;
+  gap: 12px;
+  max-width: 830px;
+  margin-bottom: 34px;
+}
+
+.section-heading p {
+  max-width: 780px;
+}
+
+.feature-grid,
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.feature,
+.policy-card,
+.price-panel,
+.download-panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 22px;
+}
+
+.feature {
+  min-height: 164px;
+}
+
+.feature h3 {
+  color: var(--navy);
+}
+
+.feature strong,
+.policy-card strong {
+  color: var(--ink);
+}
+
+.policy-card {
+  display: grid;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.policy-card p,
+.feature p {
+  margin-bottom: 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.7fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.price-panel {
+  position: sticky;
+  top: 96px;
+  box-shadow: 0 14px 34px rgba(13, 34, 55, 0.08);
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.price strong {
+  color: var(--navy);
+  font-size: clamp(38px, 6vw, 62px);
+}
+
+.price span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.fine-print {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.status-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--line);
+}
+
+.status-strip div {
+  padding: 18px;
+  background: white;
+}
+
+.status-strip strong {
+  display: block;
+  color: var(--ink);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 34px clamp(18px, 5vw, 58px);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-top: 96px;
+}
+
+.page h1 {
+  font-size: clamp(36px, 5vw, 58px);
+}
+
+.page article {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.page ul {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.download-panel {
+  display: grid;
+  gap: 12px;
+  max-width: 680px;
+  margin-top: 28px;
+}
+
+.notice {
+  border-left: 4px solid var(--gold);
+  padding: 14px 16px;
+  background: #fff7e6;
+  color: #6e4b08;
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-nav {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .site-nav .button {
+    display: none;
+  }
+
+  .hero {
+    min-height: 560px;
+    padding-top: 82px;
+    background:
+      linear-gradient(180deg, rgba(13, 34, 55, 0.9), rgba(13, 34, 55, 0.98)),
+      url("spiff-dashboard-preview.png") center / cover no-repeat;
+  }
+
+  .feature-grid,
+  .policy-grid,
+  .split,
+  .status-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .price-panel {
+    position: static;
+  }
+}
