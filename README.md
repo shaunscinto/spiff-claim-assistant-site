@@ -1,4 +1,4 @@
-# Spiff Claim Assistant Website
+# Pip Website
 
 Static public website for Stripe account activation and customer-facing product information.
 
@@ -14,7 +14,8 @@ Pages:
 Before publishing:
 
 - Replace `support@charliesystems.net` if another support mailbox should be used.
-- Point the checkout button to the hosted Stripe Checkout/license server URL when live checkout is ready.
+- Checkout buttons point to the hosted license server buy page:
+  `https://spiff-license-prod.jollydesert-2af4bbca.westus2.azurecontainerapps.io/buy`
 - Replace the download page copy or link when the production installer is ready.
 
 Custom domain:
